@@ -26,7 +26,7 @@ jobs:
       run: docker container stop web
       continue-on-error: true
     - name: Generate allure report
-      run:  allure serve target/allure-results
+      run:  allure allure -c generate target/allure-results
       continue-on-error: true
     - name: Start nginx
       run: docker run --rm -d -p 80:80 --name web -v $PWD/allure-report:/usr/share/nginx/html nginx
