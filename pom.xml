@@ -88,6 +88,11 @@
             <artifactId>allure-rest-assured</artifactId>
             <version>2.14.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>1.0.8</version>
+        </dependency>
     </dependencies>
 
     <build>
