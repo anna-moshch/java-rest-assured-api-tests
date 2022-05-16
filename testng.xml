@@ -3,9 +3,8 @@
 <suite name="All tests" parallel="methods" thread-count="7" configfailurepolicy="continue">
     <test verbose="1" name="Regression" annotations="JDK">
         <packages>
-            <package name="artObject.details"/>
-            <package name="artObject.images"/>
-            <package name="artObject.search"/>
+            <package name="com.rijksmuseum.tests.artObject"/>
+            <package name="com.rijksmuseum.tests.artObject.search"/>
         </packages>
     </test>
 </suite>

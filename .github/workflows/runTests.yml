@@ -4,7 +4,7 @@ name: Java CI with Maven Allure
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master , develop ]
   pull_request:
     branches: [ master ]
 
