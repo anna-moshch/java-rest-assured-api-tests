@@ -3,7 +3,7 @@ package com.rijksmuseum.tests.clients.artObject;
 import com.rijksmuseum.tests.clients.AbstractClientApi;
 import com.rijksmuseum.tests.model.artObject.ArtObject;
 import com.rijksmuseum.tests.model.artObject.LevelsItem;
-import com.rijksmuseum.tests.testData.consts.Culture;
+import com.rijksmuseum.tests.utils.TestConfig;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 public class ImagesApi extends AbstractClientApi {
 
     private String getBaseUrl(ArtObject artObject){
-        return "/api/" + Culture.NL + "/collection/" + artObject.getObjectNumber() + "/tiles";
+        return "/api/" + TestConfig.LOCALIZATION  + "/collection/" + artObject.getObjectNumber() + "/tiles";
     }
 
     public List<LevelsItem> getArtObjectImages(ArtObject artObject) {

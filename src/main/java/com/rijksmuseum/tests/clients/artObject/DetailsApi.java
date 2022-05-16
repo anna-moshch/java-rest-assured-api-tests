@@ -3,24 +3,21 @@ package com.rijksmuseum.tests.clients.artObject;
 import com.rijksmuseum.tests.model.artObject.ArtObject;
 import com.rijksmuseum.tests.clients.AbstractClientApi;
 import com.rijksmuseum.tests.model.responces.DetailsGetResponse;
+import com.rijksmuseum.tests.utils.TestConfig;
 
 import static io.restassured.RestAssured.given;
 
 public class DetailsApi extends AbstractClientApi {
 
-    private String getBaseUrl(ArtObject artObject){
-        return "/api/" + artObject.getLanguage() + "/collection/" + artObject.getObjectNumber();
+    private String getBaseUrl(ArtObject artObject) {
+        return "/api/" + TestConfig.LOCALIZATION + "/collection/" + artObject.getObjectNumber();
     }
 
     public ArtObject getArtObjectDetails(ArtObject artObject) {
         return given()
                 .spec(getRequestSpecification(getBaseUrl(artObject)))
                 .when().get().then()
-
                 .statusCode(200)
-                .log().all()
-
-
                 .extract()
                 .response()
                 .as(DetailsGetResponse.class)

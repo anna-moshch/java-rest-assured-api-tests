@@ -1,4 +1,4 @@
-package com.rijksmuseum.tests.artObject.images;
+package com.rijksmuseum.tests.artObject;
 
 import com.rijksmuseum.tests.AbstractTest;
 import io.qameta.allure.Epic;
@@ -13,12 +13,11 @@ import static com.rijksmuseum.tests.Behaviors.ART_OBJECT_IMAGES;
 
 @Epic(ART_OBJECT_IMAGES)
 @Feature("Get an Art Object images")
-@Test
 public class ArtObjectImagesTests extends AbstractTest {
 
     @Test(description = "TC_01 Verifying that the images list is not empty")
     public void checkArtObjectImagesListNotEmpty() {
-        List<LevelsItem> actualResult = steps.images.getArtObjectImages(data.details.getDefaultArtObjectNl());
+        List<LevelsItem> actualResult = steps.images.getArtObjectImages(data.details.getDefaultArtObject());
         assertThat(actualResult.size()).isGreaterThan(0);
     }
 

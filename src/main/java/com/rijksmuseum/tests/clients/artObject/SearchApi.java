@@ -2,6 +2,7 @@ package com.rijksmuseum.tests.clients.artObject;
 
 import com.rijksmuseum.tests.clients.AbstractClientApi;
 import com.rijksmuseum.tests.model.artObject.ArtObjectsItem;
+import com.rijksmuseum.tests.utils.TestConfig;
 
 import java.util.List;
 import java.util.Map;
@@ -10,13 +11,13 @@ import static io.restassured.RestAssured.given;
 
 public class SearchApi extends AbstractClientApi {
 
-    private String getBaseUrl(String culture) {
-        return "/api/" + culture + "/collection/";
+    private String getBaseUrl() {
+        return "/api/" + TestConfig.LOCALIZATION  + "/collection/";
     }
 
-    public List<ArtObjectsItem> getArtObjectItems(String culture, Map<String, String> params) {
+    public List<ArtObjectsItem> getArtObjectItems(Map<String, String> params) {
         return given()
-                .spec(getRequestSpecification(getBaseUrl(culture)))
+                .spec(getRequestSpecification(getBaseUrl()))
                 .params(params)
                 .when()
                 .get()

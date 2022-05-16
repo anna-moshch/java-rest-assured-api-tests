@@ -15,8 +15,8 @@ public class SearchSteps {
     private SearchApi search;
 
     @Step("Get an Art Objects items list as a search result")
-    public List<ArtObjectsItem> getArtObjectItems(String culture, Map<String, String> params) {
-        return search.getArtObjectItems(culture, params);
+    public List<ArtObjectsItem> getArtObjectItems(Map<String, String> params) {
+        return search.getArtObjectItems(params);
     }
 
 }
