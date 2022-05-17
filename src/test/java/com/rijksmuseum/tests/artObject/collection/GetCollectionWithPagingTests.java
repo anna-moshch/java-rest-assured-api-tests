@@ -8,11 +8,10 @@ import com.rijksmuseum.tests.model.artObject.ArtObjectsItem;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static com.rijksmuseum.tests.Behaviors.ART_OBJECT_SEARCH;
+import static com.rijksmuseum.tests.Behaviors.ART_OBJECT_COLLECTION;
 
 
-@Epic(ART_OBJECT_SEARCH)
+@Epic(ART_OBJECT_COLLECTION)
 @Feature("Get collection with paging")
 public class GetCollectionWithPagingTests extends AbstractTest {
 

@@ -38,4 +38,11 @@ public class DetailsApi extends AbstractClientApi {
                 .when().get().then()
                 .statusCode(404);
     }
+
+    public void checkNotFoundStatusCode(ArtObject artObject, String format) {
+        given()
+                .spec(getRequestSpecification(getBaseUrl(artObject)).param("format", format))
+                .when().get().then()
+                .statusCode(404);
+    }
 }

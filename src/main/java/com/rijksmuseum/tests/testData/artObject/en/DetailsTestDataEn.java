@@ -6,6 +6,7 @@ import com.rijksmuseum.tests.model.artObject.Label;
 import com.rijksmuseum.tests.testData.artObject.DetailsTestData;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class DetailsTestDataEn implements DetailsTestData {
 
@@ -30,6 +31,8 @@ public class DetailsTestDataEn implements DetailsTestData {
                 .longTitle("The Night Watch, Rembrandt van Rijn, 1642")
                 .subTitle("h 379.5cm × w 453.5cm × w 337kg")
                 .scLabelLine("Rembrandt van Rijn (1606-1669) oil on canvas, 1642")
+                .objectTypes(Collections.singletonList("painting"))
+                .productionPlaces(Collections.singletonList("Amsterdam"))
                 .label(Label.builder()
                         .title("The Night Watch")
                         .makerLine("Rembrandt van Rijn (1606-1669) oil on canvas, 1642")
@@ -48,7 +51,7 @@ public class DetailsTestDataEn implements DetailsTestData {
 
     public ArtObject getArtObjectWithWrongObjectNumber() {
         return ArtObject.builder()
-                .objectNumber("SK-C-55")
+                .objectNumber("Sk-C-5")
                 .language("en")
                 .build();
     }

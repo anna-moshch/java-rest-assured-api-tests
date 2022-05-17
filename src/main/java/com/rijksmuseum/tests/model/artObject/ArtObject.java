@@ -61,6 +61,7 @@ public class ArtObject{
 	private List<Object> makers;
 	private List<Object> inscriptions;
 	private List<String> documentation;
+	@XmlElement(name="ProductionPlaces")
 	private List<String> productionPlaces;
 	private List<Normalized32ColorsItem> normalized32Colors;
 	@XmlElement(name="Titles")
@@ -76,6 +77,7 @@ public class ArtObject{
 	private List<Object> techniques;
 	private List<Object> exhibitions;
 	private String location;
+	@XmlElement(name="ObjectTypes")
 	private List<String> objectTypes;
 	private List<DimensionsItem> dimensions;
 	@XmlElement(name="LongTitle")

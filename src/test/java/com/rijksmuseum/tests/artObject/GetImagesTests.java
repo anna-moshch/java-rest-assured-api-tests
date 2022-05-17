@@ -8,7 +8,6 @@ import com.rijksmuseum.tests.model.artObject.LevelsItem;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static com.rijksmuseum.tests.Behaviors.ART_OBJECT_IMAGES;
 
 @Epic(ART_OBJECT_IMAGES)
@@ -21,5 +20,8 @@ public class GetImagesTests extends AbstractTest {
         step.generic.assertGreaterSize(actualResult.size(), 0);
     }
 
-    //TODO: add tests to verify tiles, for example for incorrect Art Object numbers should be 404, not 500
+    @Test(description = "TC#02 Verifying that 404 error is returned for incorrect object number")
+    public void check404ErrorFroIncorrectObjectNumber() {
+        step.images.checkNotFoundStatusCode(data.details.getArtObjectWithWrongObjectNumber());
+    }
 }

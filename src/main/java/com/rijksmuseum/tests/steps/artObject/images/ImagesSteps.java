@@ -19,4 +19,9 @@ public class ImagesSteps {
     public List<LevelsItem> getArtObjectImages(ArtObject artObject) {
         return images.getArtObjectImages(artObject);
     }
+
+    @Step("Verifying that 404 Not Found Status code returns")
+    public void checkNotFoundStatusCode(ArtObject artObject) {
+        images.checkNotFoundStatusCode(artObject);
+    }
 }

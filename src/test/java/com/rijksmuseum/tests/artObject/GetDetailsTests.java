@@ -32,7 +32,12 @@ public class GetDetailsTests extends AbstractTest {
         step.details.assertArtObjectsDetails(actualResult, data.details.getDefaultArtObject());
     }
 
-    @Test(description = "TC#04 Verifying that the 404 status code returns for the request with a wrong object number")
+    @Test(description = "TC#04 Verifying 404 status code for incorrect format")
+    public void checkStatusCodeForWrongFormat() {
+        step.details.checkNotFoundStatusCode(data.details.getDefaultArtObject(), "jsons");
+    }
+
+    @Test(description = "TC#05 Verifying that the 404 status code for the request with a wrong object number")
     public void checkStatusCodeForWrongObjectNumber() {
         step.details.checkNotFoundStatusCode(data.details.getArtObjectWithWrongObjectNumber());
     }

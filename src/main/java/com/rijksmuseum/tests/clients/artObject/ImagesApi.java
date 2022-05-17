@@ -11,17 +11,22 @@ import static io.restassured.RestAssured.given;
 
 public class ImagesApi extends AbstractClientApi {
 
-    private String getBaseUrl(ArtObject artObject){
-        return "/api/" + TestConfig.LOCALIZATION  + "/collection/" + artObject.getObjectNumber() + "/tiles";
+    private String getBaseUrl(ArtObject artObject) {
+        return "/api/" + TestConfig.LOCALIZATION + "/collection/" + artObject.getObjectNumber() + "/tiles";
     }
 
     public List<LevelsItem> getArtObjectImages(ArtObject artObject) {
         return given()
                 .spec(getRequestSpecification(getBaseUrl(artObject)))
-                .when()
-                .get()
-                .then()
+                .when().get().then()
                 .statusCode(200)
                 .extract().jsonPath().getList("levels", LevelsItem.class);
+    }
+
+    public void checkNotFoundStatusCode(ArtObject artObject) {
+        given()
+                .spec(getRequestSpecification(getBaseUrl(artObject)))
+                .when().get().then()
+                .statusCode(404);
     }
 }

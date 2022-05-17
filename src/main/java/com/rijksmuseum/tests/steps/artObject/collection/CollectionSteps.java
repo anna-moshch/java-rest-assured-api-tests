@@ -13,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Data
 public class CollectionSteps {
+
     @Inject
     private CollectionApi search;
 
@@ -21,13 +22,10 @@ public class CollectionSteps {
         return search.getItemsCollection(params);
     }
 
-
     @Step("Assert that the Art Objects item is present in the result collection")
     public void assertThatObjectIsPresentInCollection(List<ArtObjectsItem> actualResult, ArtObjectsItem expectedResult) {
         assertThat(actualResult)
                 .contains(expectedResult);
     }
-
-
 
 }

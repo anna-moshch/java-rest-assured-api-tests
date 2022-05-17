@@ -6,6 +6,7 @@ import com.rijksmuseum.tests.model.artObject.Label;
 import com.rijksmuseum.tests.testData.artObject.DetailsTestData;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class DetailsTestDataNl implements DetailsTestData {
 
@@ -44,6 +45,8 @@ public class DetailsTestDataNl implements DetailsTestData {
                 .longTitle("De Nachtwacht, Rembrandt van Rijn, 1642")
                 .subTitle("h 379,5cm × b 453,5cm × g 337kg")
                 .scLabelLine("Rembrandt van Rijn (1606-1669) olieverf op doek, 1642")
+                .objectTypes(Collections.singletonList("schilderij"))
+                .productionPlaces(Collections.singletonList("Amsterdam"))
                 .label(Label.builder()
                         .title("De Nachtwacht")
                         .makerLine("Rembrandt van Rijn (1606-1669) olieverf op doek, 1642")
@@ -63,7 +66,7 @@ public class DetailsTestDataNl implements DetailsTestData {
 
     public ArtObject getArtObjectWithWrongObjectNumber() {
         return ArtObject.builder()
-                .objectNumber("SK-C-55")
+                .objectNumber("Sk-C-5")
                 .language("nl")
                 .build();
     }

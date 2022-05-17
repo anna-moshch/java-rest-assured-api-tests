@@ -28,6 +28,11 @@ public class DetailsSteps {
         details.checkNotFoundStatusCode(artObject);
     }
 
+    @Step("Verifying that 404 Not Found Status code returns")
+    public void checkNotFoundStatusCode(ArtObject artObject, String format) {
+        details.checkNotFoundStatusCode(artObject, format);
+    }
+
     @Step("Assert the Art Object details")
     public void assertArtObjectsDetails(ArtObject actualResult, ArtObject expectedResult) {
         SoftAssertions softly = new SoftAssertions();

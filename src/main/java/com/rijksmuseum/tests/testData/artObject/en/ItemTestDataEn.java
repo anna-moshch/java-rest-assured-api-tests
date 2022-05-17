@@ -1,23 +1,29 @@
 package com.rijksmuseum.tests.testData.artObject.en;
 
+import com.google.inject.Inject;
 import com.rijksmuseum.tests.model.artObject.ArtObjectsItem;
 import com.rijksmuseum.tests.model.artObject.HeaderImage;
 import com.rijksmuseum.tests.model.artObject.Links;
 import com.rijksmuseum.tests.model.artObject.WebImage;
 import com.rijksmuseum.tests.testData.artObject.ItemTestData;
+import com.rijksmuseum.tests.testData.artObject.nl.DetailsTestDataNl;
 
 import java.util.Collections;
 
+
 public class ItemTestDataEn implements ItemTestData {
 
-    public ArtObjectsItem getArtObjectItemForSearchResults() {
+    @Inject
+    private DetailsTestDataEn details;
+
+    public ArtObjectsItem getDefaultArtObjectItem() {
         return ArtObjectsItem.builder()
-                .id("en-SK-C-5")
-                .objectNumber("SK-C-5")
-                .title("The Night Watch")
+                .id(details.getDefaultArtObject().getId())
+                .objectNumber(details.getDefaultArtObject().getObjectNumber())
+                .title(details.getDefaultArtObject().getTitle())
                 .hasImage(true)
-                .principalOrFirstMaker("Rembrandt van Rijn")
-                .longTitle("The Night Watch, Rembrandt van Rijn, 1642")
+                .principalOrFirstMaker(details.getDefaultArtObject().getPrincipalMaker())
+                .longTitle(details.getDefaultArtObject().getLongTitle())
                 .showImage(true)
                 .permitDownload(true)
                 .webImage(WebImage.builder()
@@ -36,7 +42,7 @@ public class ItemTestDataEn implements ItemTestData {
                         .height(460)
                         .url("https://lh3.googleusercontent.com/nAHNYM604vhPa1hbE_hBJw55JI01-ls0zCwHwvDEES38PpGyGHMgG_vaigVWSuK8GFkaxfn2Dmevw_Nmujn5dKW3jItgS6QaSI8VIsiH=s0")
                         .build())
-                .productionPlaces(Collections.singletonList("Amsterdam"))
+                .productionPlaces(Collections.singletonList(details.getDefaultArtObject().getProductionPlaces().get(0)))
                 .links(Links.builder()
                         .self("http://www.rijksmuseum.nl/api/en/collection/SK-C-5")
                         .web("http://www.rijksmuseum.nl/en/collection/SK-C-5")

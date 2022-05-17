@@ -4,5 +4,5 @@ import com.rijksmuseum.tests.model.artObject.ArtObjectsItem;
 
 public interface ItemTestData {
 
-     ArtObjectsItem getArtObjectItemForSearchResults();
+     ArtObjectsItem getDefaultArtObjectItem();
 }
