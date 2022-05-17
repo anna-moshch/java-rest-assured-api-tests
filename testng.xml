@@ -4,7 +4,7 @@
     <test verbose="1" name="Regression" annotations="JDK">
         <packages>
             <package name="com.rijksmuseum.tests.artObject"/>
-            <package name="com.rijksmuseum.tests.artObject.search"/>
+            <package name="com.rijksmuseum.tests.artObject.collection"/>
         </packages>
     </test>
 </suite>

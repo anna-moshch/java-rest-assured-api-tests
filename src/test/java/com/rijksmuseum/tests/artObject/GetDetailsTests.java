@@ -11,8 +11,8 @@ import static com.rijksmuseum.tests.testData.consts.Formats.JSONP;
 import static com.rijksmuseum.tests.testData.consts.Formats.XML;
 
 @Epic(ART_OBJECT_DETAILS)
-@Feature("Get an Art Object details")
-public class ArtObjectDetailsTests extends AbstractTest {
+@Feature("Get Art Object details")
+public class GetDetailsTests extends AbstractTest {
 
     @Test(description = "TC#01 Verifying an Art Object details page")
     public void checkArtObject() {

@@ -6,6 +6,6 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class ImagesGetResponse {
+public class GetImagesResponse {
 	private List<LevelsItem> levels;
 }

@@ -2,7 +2,7 @@ package com.rijksmuseum.tests.clients.artObject;
 
 import com.rijksmuseum.tests.model.artObject.ArtObject;
 import com.rijksmuseum.tests.clients.AbstractClientApi;
-import com.rijksmuseum.tests.model.responces.DetailsGetResponse;
+import com.rijksmuseum.tests.model.responces.GetDetailsResponse;
 import com.rijksmuseum.tests.utils.TestConfig;
 
 import static io.restassured.RestAssured.given;
@@ -20,7 +20,7 @@ public class DetailsApi extends AbstractClientApi {
                 .statusCode(200)
                 .extract()
                 .response()
-                .as(DetailsGetResponse.class)
+                .as(GetDetailsResponse.class)
                 .getArtObject();
     }
 
@@ -29,7 +29,7 @@ public class DetailsApi extends AbstractClientApi {
                 .spec(getRequestSpecification(getBaseUrl(artObject)).param("format", format))
                 .when().get().then()
                 .statusCode(200)
-                .extract().response().as(DetailsGetResponse.class).getArtObject();
+                .extract().response().as(GetDetailsResponse.class).getArtObject();
     }
 
     public void checkNotFoundStatusCode(ArtObject artObject) {

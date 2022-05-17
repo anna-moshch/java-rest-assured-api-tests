@@ -1,4 +1,4 @@
-package com.rijksmuseum.tests.artObject.search;
+package com.rijksmuseum.tests.artObject.collection;
 
 import com.rijksmuseum.tests.AbstractTest;
 import io.qameta.allure.Epic;
@@ -13,8 +13,8 @@ import static com.rijksmuseum.tests.Behaviors.ART_OBJECT_SEARCH;
 
 
 @Epic(ART_OBJECT_SEARCH)
-@Feature("Get search results with paging")
-public class SearchPagingTests extends AbstractTest {
+@Feature("Get collection with paging")
+public class GetCollectionWithPagingTests extends AbstractTest {
 
     @Test(description = "TC#01 Verifying that maximum 100 items in Search results are returned")
     public void verifyMaximumPageParam() {

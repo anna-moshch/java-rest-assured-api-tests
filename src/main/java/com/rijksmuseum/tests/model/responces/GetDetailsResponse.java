@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NoArgsConstructor
 @XmlRootElement(name = "artObjectGetResponse")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DetailsGetResponse {
+public class GetDetailsResponse {
 	private ArtObjectPage artObjectPage;
 	@XmlElement(name="ArtObject")
 	private ArtObject artObject;

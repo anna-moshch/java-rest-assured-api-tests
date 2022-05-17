@@ -28,7 +28,7 @@ public class DetailsSteps {
         details.checkNotFoundStatusCode(artObject);
     }
 
-    @Step("Assert the Art Object")
+    @Step("Assert the Art Object details")
     public void assertArtObjectsDetails(ArtObject actualResult, ArtObject expectedResult) {
         SoftAssertions softly = new SoftAssertions();
         softly.assertThat(actualResult.getId()).isEqualTo(expectedResult.getId());

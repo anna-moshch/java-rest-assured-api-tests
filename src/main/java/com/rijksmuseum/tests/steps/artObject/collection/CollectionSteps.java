@@ -1,7 +1,7 @@
-package com.rijksmuseum.tests.steps.artObject.search;
+package com.rijksmuseum.tests.steps.artObject.collection;
 
 import com.google.inject.Inject;
-import com.rijksmuseum.tests.clients.artObject.SearchApi;
+import com.rijksmuseum.tests.clients.artObject.CollectionApi;
 import io.qameta.allure.Step;
 import com.rijksmuseum.tests.model.artObject.ArtObjectsItem;
 import lombok.Data;
@@ -12,13 +12,13 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Data
-public class SearchSteps {
+public class CollectionSteps {
     @Inject
-    private SearchApi search;
+    private CollectionApi search;
 
-    @Step("Get an Art Objects items list as a search result")
+    @Step("Get an Art Objects items collection with params")
     public List<ArtObjectsItem> getArtObjectItems(Map<String, String> params) {
-        return search.getArtObjectItems(params);
+        return search.getItemsCollection(params);
     }
 
 

@@ -12,8 +12,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static com.rijksmuseum.tests.Behaviors.ART_OBJECT_IMAGES;
 
 @Epic(ART_OBJECT_IMAGES)
-@Feature("Get an Art Object images")
-public class ArtObjectImagesTests extends AbstractTest {
+@Feature("Get Art Object images")
+public class GetImagesTests extends AbstractTest {
 
     @Test(description = "TC#01 Verifying that the images list is not empty")
     public void checkArtObjectImagesListNotEmpty() {

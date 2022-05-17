@@ -8,7 +8,7 @@ import com.rijksmuseum.tests.model.artObject.FacetsItem;
 import java.util.List;
 
 @Data
-public class SearchGetResponse{
+public class GetCollectionResponse {
 	private List<ArtObjectsItem> artObjects;
 	private CountFacets countFacets;
 	private int count;

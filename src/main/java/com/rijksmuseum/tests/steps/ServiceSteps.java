@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import com.rijksmuseum.tests.steps.artObject.AssertionSteps;
 import com.rijksmuseum.tests.steps.artObject.details.DetailsSteps;
 import com.rijksmuseum.tests.steps.artObject.images.ImagesSteps;
-import com.rijksmuseum.tests.steps.artObject.search.SearchSteps;
+import com.rijksmuseum.tests.steps.artObject.collection.CollectionSteps;
 
 public class ServiceSteps {
 
@@ -18,5 +18,5 @@ public class ServiceSteps {
     public AssertionSteps generic;
 
     @Inject
-    public SearchSteps search;
+    public CollectionSteps search;
 }

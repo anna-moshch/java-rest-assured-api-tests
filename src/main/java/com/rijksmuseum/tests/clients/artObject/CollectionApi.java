@@ -9,13 +9,13 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class SearchApi extends AbstractClientApi {
+public class CollectionApi extends AbstractClientApi {
 
     private String getBaseUrl() {
         return "/api/" + TestConfig.LOCALIZATION  + "/collection/";
     }
 
-    public List<ArtObjectsItem> getArtObjectItems(Map<String, String> params) {
+    public List<ArtObjectsItem> getItemsCollection(Map<String, String> params) {
         return given()
                 .spec(getRequestSpecification(getBaseUrl()))
                 .params(params)
