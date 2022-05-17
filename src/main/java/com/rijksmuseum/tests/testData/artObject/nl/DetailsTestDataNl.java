@@ -1,6 +1,8 @@
 package com.rijksmuseum.tests.testData.artObject.nl;
 
+import com.rijksmuseum.tests.model.artObject.Acquisition;
 import com.rijksmuseum.tests.model.artObject.ArtObject;
+import com.rijksmuseum.tests.model.artObject.Label;
 import com.rijksmuseum.tests.testData.artObject.DetailsTestData;
 
 import java.util.Arrays;
@@ -32,6 +34,29 @@ public class DetailsTestDataNl implements DetailsTestData {
                         "Tussen de soldaten links staat een meisje met een dode kip om haar middel, rechts een " +
                         "blaffende hond. Linksboven de vaandrig met de uitgestoken vaandel.")
                 .principalMaker("Rembrandt van Rijn")
+                .acquisition(Acquisition.builder()
+                        .method("bruikleen")
+                        .date("1808-01-01T00:00:00")
+                        .creditLine("Bruikleen van de gemeente Amsterdam")
+                        .build())
+                .materials(Arrays.asList("doek", "olieverf"))
+                .physicalMedium("olieverf op doek")
+                .longTitle("De Nachtwacht, Rembrandt van Rijn, 1642")
+                .subTitle("h 379,5cm × b 453,5cm × g 337kg")
+                .scLabelLine("Rembrandt van Rijn (1606-1669) olieverf op doek, 1642")
+                .label(Label.builder()
+                        .title("De Nachtwacht")
+                        .makerLine("Rembrandt van Rijn (1606-1669) olieverf op doek, 1642")
+                        .description("Rembrandts beroemdste en grootste schilderij werd gemaakt voor de Kloveniersdoelen. " +
+                                "Dit was een van de drie hoofdkwartieren van de Amsterdamse schutterij, " +
+                                "de burgerwacht van de stad. Rembrandt was de eerste die op een schuttersstuk " +
+                                "alle figuren in actie weergaf. De kapitein, in het zwart, geeft zijn luitenant " +
+                                "opdracht dat de compagnie moet gaan marcheren. De schutters stellen zich op. " +
+                                "Met behulp van licht vestigde Rembrandt de aandacht op belangrijke details, " +
+                                "zoals het handgebaar van de kapitein en het kleine meisje op de voorgrond. " +
+                                "Zij is de mascotte van de schutters. De naam Nachtwacht is pas veel later ontstaan, " +
+                                "toen men dacht dat het om een nachtelijk tafereel ging.")
+                        .date("2019-07-02").build())
                 .build();
         //TODO: here could be added all necessary fields
     }

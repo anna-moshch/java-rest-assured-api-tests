@@ -6,7 +6,7 @@ import com.rijksmuseum.tests.testData.artObject.ItemTestData;
 import com.rijksmuseum.tests.testData.artObject.en.DetailsTestDataEn;
 import com.rijksmuseum.tests.testData.artObject.en.ItemTestDataEn;
 
-public class bindTestDataEn extends AbstractModule {
+public class BindTestDataEn extends AbstractModule {
     @Override
     public void configure() {
         bind(DetailsTestData.class).to(DetailsTestDataEn.class);

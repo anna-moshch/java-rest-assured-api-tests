@@ -19,6 +19,7 @@ import java.util.List;
 public class ArtObject{
 	//TODO: need to add XmlElement for all needed fields to verify XML format, or create a custom decoder for all elements
 	private List<Object> associations;
+	@XmlElement(name="SCLabelLine")
 	private String scLabelLine;
 	private String principalOrFirstMaker;
 	private Object labelText;
@@ -38,11 +39,14 @@ public class ArtObject{
 	private String title;
 	private List<ColorsItem> colors;
 	private List<Object> physicalProperties;
+	@XmlElement(name="PhysicalMedium")
 	private String physicalMedium;
 	private WebImage webImage;
+	@XmlElement(name="SubTitle")
 	private String subTitle;
 	private Object copyrightHolder;
 	private Object artistRole;
+	@XmlElement(name="PlaqueDescriptionEnglish")
 	private String plaqueDescriptionEnglish;
 	private List<Object> catRefRPK;
 	private Links links;
@@ -50,6 +54,7 @@ public class ArtObject{
 	private Dating dating;
 	@XmlElement(name="Id")
 	private String id;
+	@XmlElement(name="Acquisition")
 	private Acquisition acquisition;
 	private List<String> objectCollection;
 	private List<ColorsWithNormalizationItem> colorsWithNormalization;
@@ -60,15 +65,19 @@ public class ArtObject{
 	private List<Normalized32ColorsItem> normalized32Colors;
 	@XmlElement(name="Titles")
 	private List<String> titles;
+	@XmlElement(name="Label")
 	private Label label;
+	@XmlElement(name="PlaqueDescriptionDutch")
 	private String plaqueDescriptionDutch;
 	private Classification classification;
 	private List<String> historicalPersons;
+	@XmlElement(name="Materials")
 	private List<String> materials;
 	private List<Object> techniques;
 	private List<Object> exhibitions;
 	private String location;
 	private List<String> objectTypes;
 	private List<DimensionsItem> dimensions;
+	@XmlElement(name="LongTitle")
 	private String longTitle;
 }

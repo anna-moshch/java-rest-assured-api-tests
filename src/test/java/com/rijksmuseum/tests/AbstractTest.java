@@ -11,13 +11,13 @@ import org.testng.annotations.BeforeSuite;
 import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnvironmentWriter;
 
 public abstract class AbstractTest {
-    protected ServiceSteps steps;
+    protected ServiceSteps step;
     protected TestData data;
 
     @BeforeClass
     public void init() {
-        steps = ConfigHolder.getInstance().getTestSteps();
-        data = ConfigHolder.getInstance().getTestData();
+        step = new ConfigHolder().getInstance().getTestSteps();
+        data = new ConfigHolder().getInstance().getTestData();
     }
 
     @BeforeSuite

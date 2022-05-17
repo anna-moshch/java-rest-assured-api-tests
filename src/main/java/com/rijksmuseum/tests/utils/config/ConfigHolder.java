@@ -17,18 +17,18 @@ public class ConfigHolder {
     @Getter
     private volatile TestData testData;
 
-    private ConfigHolder() {
+    public ConfigHolder() {
     }
 
-    public static ConfigHolder getInstance() {
+    public ConfigHolder getInstance() {
         if (instance == null) {
             lock.lock();
             try {
                 if (instance == null) {
                     log.info("Initializing ConfigHolder instance");
                     ConfigHolder configHolder = new ConfigHolder();
-                    configHolder.testSteps = ConfigLoader.loadTestSteps();
-                    configHolder.testData = ConfigLoader.loadTestData();
+                    configHolder.testSteps = new ConfigLoader().loadTestSteps();
+                    configHolder.testData = new ConfigLoader().loadTestData();
 
                     instance = configHolder;
                     log.info("Initialization of the instance is completed");

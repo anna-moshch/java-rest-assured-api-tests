@@ -9,6 +9,8 @@ import lombok.Data;
 import java.util.List;
 import java.util.Map;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @Data
 public class SearchSteps {
     @Inject
@@ -18,5 +20,14 @@ public class SearchSteps {
     public List<ArtObjectsItem> getArtObjectItems(Map<String, String> params) {
         return search.getArtObjectItems(params);
     }
+
+
+    @Step("Assert that the Art Objects item is present in the result collection")
+    public void assertThatObjectIsPresentInCollection(List<ArtObjectsItem> actualResult, ArtObjectsItem expectedResult) {
+        assertThat(actualResult)
+                .contains(expectedResult);
+    }
+
+
 
 }

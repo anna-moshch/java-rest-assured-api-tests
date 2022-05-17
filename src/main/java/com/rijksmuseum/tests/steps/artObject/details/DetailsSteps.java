@@ -29,7 +29,7 @@ public class DetailsSteps {
     }
 
     @Step("Assert the Art Object")
-    public static void assertArtObjectsDetails(ArtObject actualResult, ArtObject expectedResult) {
+    public void assertArtObjectsDetails(ArtObject actualResult, ArtObject expectedResult) {
         SoftAssertions softly = new SoftAssertions();
         softly.assertThat(actualResult.getId()).isEqualTo(expectedResult.getId());
         softly.assertThat(actualResult.getObjectNumber()).isEqualTo(expectedResult.getObjectNumber());
@@ -38,7 +38,14 @@ public class DetailsSteps {
         softly.assertThat(actualResult.getTitles()).isEqualTo(expectedResult.getTitles());
         softly.assertThat(actualResult.getDescription()).isEqualTo(expectedResult.getDescription());
         softly.assertThat(actualResult.getPrincipalMaker()).isEqualTo(expectedResult.getPrincipalMaker());
-
+        softly.assertThat(actualResult.getAcquisition()).isEqualTo(expectedResult.getAcquisition());
+        softly.assertThat(actualResult.getMaterials()).isEqualTo(expectedResult.getMaterials());
+        softly.assertThat(actualResult.getPhysicalMedium()).isEqualTo(expectedResult.getPhysicalMedium());
+        softly.assertThat(actualResult.getPhysicalMedium()).isEqualTo(expectedResult.getPhysicalMedium());
+        softly.assertThat(actualResult.getLongTitle()).isEqualTo(expectedResult.getLongTitle());
+        softly.assertThat(actualResult.getSubTitle()).isEqualTo(expectedResult.getSubTitle());
+        softly.assertThat(actualResult.getScLabelLine()).isEqualTo(expectedResult.getScLabelLine());
+        softly.assertThat(actualResult.getLabel()).isEqualTo(expectedResult.getLabel());
         //TODO: here could be added all necessary asserts
         softly.assertAll();
     }

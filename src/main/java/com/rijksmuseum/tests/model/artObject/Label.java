@@ -1,12 +1,25 @@
 package com.rijksmuseum.tests.model.artObject;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 
 @Data
-public class Label{
-	private String date;
-	private Object notes;
-	private String description;
-	private String title;
-	private String makerLine;
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Label {
+    @XmlElement(name = "Date")
+    private String date;
+    @XmlElement(name = "Description")
+    private String description;
+    @XmlElement(name = "Title")
+    private String title;
+    @XmlElement(name = "MakerLine")
+    private String makerLine;
 }
